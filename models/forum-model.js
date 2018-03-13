@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const UserComment = require('./comment-model');
+const UserCommentSchema = UserComment.schema;
 
 const ForumSchema = new Schema({
   owner: {
@@ -15,7 +17,7 @@ const ForumSchema = new Schema({
     type: String,
     required: true
   },
-  // Comment Section???
+  comments: [ UserCommentSchema ]
 }, {
   timestamps: true
 });
