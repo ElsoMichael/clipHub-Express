@@ -19,7 +19,7 @@ router.post('/forum', (req, res, next) => {
   const newPost = new Forum({
     owner: req.user._id,
     title: req.body.title,
-    text: req.boby.text
+    text: req.body.text
   });
 
   newPost.save((err) => {
